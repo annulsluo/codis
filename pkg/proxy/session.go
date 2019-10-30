@@ -70,7 +70,7 @@ func NewSession(sock net.Conn, config *Config) *Session {
 	c.ReaderTimeout = config.SessionRecvTimeout.Duration()
 	c.WriterTimeout = config.SessionSendTimeout.Duration()
 	c.SetKeepAlivePeriod(config.SessionKeepAlivePeriod.Duration())
-
+	// 创建session，但这个函数在哪里呢，有三个参数
 	s := &Session{
 		Conn: c, config: config,
 		CreateUnix: time.Now().Unix(),
